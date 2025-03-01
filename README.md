@@ -1,108 +1,69 @@
-# TechackZ 🛡️
+The NVD Assessment Project
 
-<p align="center">
-  <a href="#features">Features</a> •
-  <a href="#installation">Installation</a> •
-  <a href="#usage">Usage</a> •
-  <a href="#examples">Examples</a> •
-  <a href="#contributing">Contributing</a> •
-  <a href="#license">License</a>
-</p>
 
-TechackZ is an advanced web technology detection and vulnerability assessment tool that combines the power of Wappalyzer's technology detection with Nuclei's security scanning capabilities. It automatically identifies web technologies, checks for known vulnerabilities in the National Vulnerability Database (NVD), and performs targeted security scans.
+A web application designed to assess and report on vulnerabilities in web applications using the National Vulnerability Database (NVD) and various scanning tools.
 
-## 🚀 Features
+Overview
 
-- **Technology Stack Detection**
-  - Automatically identifies web technologies and frameworks
-  - Accurate version detection and normalization
-  - Categories and confidence scoring
 
-- **Vulnerability Assessment**
-  - Queries NIST NVD for known CVEs
-  - Version-specific vulnerability matching
-  - Real-time security scanning with Nuclei
+The NVD Assessment Project is a comprehensive vulnerability assessment tool that utilizes the NVD database, Wappalyzer, and Nuclei scanning engine to identify and report on potential security vulnerabilities in web applications.
 
-- **Customizable Scanning**
-  - Severity-based filtering (info to critical)
-  - Technology-specific targeted scans
-  - Configurable output formats
+Features
 
-- **Comprehensive Reporting**
-  - Structured JSON output
-  - Detailed vulnerability descriptions
-  - Severity-based categorization
 
-## 📋 Prerequisites
+- Vulnerability Scanning: Utilizes Nuclei scanning engine to identify potential vulnerabilities in web applications.
+- Technology Detection: Employs Wappalyzer to detect technologies used in web applications.
+- NVD Integration: Leverages the NVD database to provide detailed information on identified vulnerabilities.
+- Reporting: Generates comprehensive reports on identified vulnerabilities, including severity levels, descriptions, and potential exploits.
+- Customizable: Allows users to specify scanning parameters, including URL, technology, and severity level.
 
-- Python 3.x
-- Go (for Nuclei installation)
-- Internet connection for NVD API access
+Requirements
 
-## 🔧 Installation
 
-1. Clone the repository:
-```bash
-git clone https://github.com/gotr00t0day/TechackZ.git
-cd TechackZ
-````
-2. Install Python dependencies:
-```bash
-pip install -r requirements.txt
-```
-3. Install Tools
-```bash
-chmod +x install.sh
-./install.sh
-```
+- Python 3.8+
+- Docker
+- NVIDIA GPU (optional)
+- transformers library
+- torch library
+- neptune library
+- docker library
+- paramiko library
+- pyelftools library
+- pwntools library
+- requests library
+- beautifulsoup4 library
+- python-dotenv library
+- argparse library
 
-## 📖 Usage
-```bash
-usage: techackz.py [-h] [-u URL | -f FILE] [-o OUTPUT]
-                   [-s {info,low,medium,high,critical}] [--no-tech] [--ignore-ssl]
-                   [-t TECHNOLOGY] [-d]
+Installation
 
-Detect web technologies and run targeted Nuclei scans
 
-options:
-  -h, --help            show this help message and exit
-  -u, --url URL         Target URL to scan
-  -f, --file FILE       File containing list of subdomains to scan
-  -o, --output OUTPUT   Output file to save results (JSON format)
-  -s, --severity {info,low,medium,high,critical}
-                        Minimum severity level to report
-  --no-tech             Skip technology detection and run all Nuclei scans
-  --ignore-ssl          Ignore SSL certificate verification
-  -t, --technology TECHNOLOGY
-                        Specify technology to scan for (e.g., "wordpress", "nginx")
-  -d, --debug           Enable debug mode         Skip technology detection and run all Nuclei scan
-```
+1. Clone the repository: git clone https://github.com/your-username/nvd-assessment-project.git
+2. Install required packages: pip install -r requirements.txt
+3. Build the Docker image: docker build -t nvd-assessment-project .
+4. Run the Docker container: docker run -it nvd-assessment-project
 
-## ⚠️ Disclaimer
+Usage
 
-This tool is for educational and authorized testing purposes only. Always ensure you have permission to scan the target systems. The authors are not responsible for any misuse or damage caused by this tool.
 
-## 🤝 Contributing
+1. Configure the application by modifying the config.json file.
+2. Run the application: python app.py
+3. Access the web application through your web browser.
 
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+API Documentation
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
-## 📝 License
+API documentation is available at <http://localhost:5000/api/docs>.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+License
 
-- [Wappalyzer](https://github.com/AliasIO/Wappalyzer)
-- [Nuclei](https://github.com/projectdiscovery/nuclei)
-- [NIST NVD](https://nvd.nist.gov/)
 
----
-<p align="center">
-Made with ❤️ by c0deninja
-</p>
+This project is licensed under the MIT License.
+
+Acknowledgments
+
+
+- Thanks to the NVD team for providing the vulnerability database.
+- Thanks to the Wappalyzer team for providing the technology detection tool.
+- Thanks to the Nuclei team for providing the scanning engine.
